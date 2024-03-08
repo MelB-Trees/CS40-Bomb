@@ -14,7 +14,7 @@
   401182:	75 05                	jne    401189 <phase_1+0x17>          \* if the jne coondition is met, jumps to "callq <explode_bomb>" 
                                                                        * where is this condition obtained? I'm guessing <strings_not_equal> 
                                                                        * modifies the value of %eax, looking to see if it equals 0?
-                                                                       * what does je versus jne do?
+                                                                       * jne: jump if NOT equal to zero
                                                                        *\
   401184:	48 83 c4 08          	add    $0x8,%rsp
   401188:	c3                   	retq                                  \* return, exits function *\
