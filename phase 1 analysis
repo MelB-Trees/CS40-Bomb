@@ -15,7 +15,8 @@
                                                                        * where is this condition obtained? I'm guessing <strings_not_equal> 
                                                                        * modifies the value of %eax, looking to see if it equals 0?
                                                                        * jne: jump if NOT equal to zero
-                                                                       * this means we want <strings_not_equal> to return 0
+                                                                       *     this means we want <strings_not_equal> to return 0
+                                                                       * so is 1 true and 0 false?
                                                                        *\
   401184:	48 83 c4 08          	add    $0x8,%rsp
   401188:	c3                   	retq                                  \* return, exits function *\
