@@ -1,13 +1,13 @@
 0000000000401036 <main>:
 ...
 401083:	e8 7d 09 00 00       	callq  401a05 <read_line>
-  401088:	48 89 c7             	mov    %rax,%rdi
+  401088:	48 89 c7             	mov    %rax,%rdi                       \* %rdi makes the input an argument for <phase_1>?
   40108b:	e8 e2 00 00 00       	callq  401172 <phase_1>
 ...
 
 
 0000000000401172 <phase_1>:
-  401172:	48 83 ec 08          	sub    $0x8,%rsp
+  401172:	48 83 ec 08          	sub    $0x8,%rsp                      \* what does %rsp hold?
   401176:	be 60 1d 40 00       	mov    $0x401d60,%esi
   40117b:	e8 9f 03 00 00       	callq  40151f <strings_not_equal>     \* I think it's using $esi, which is set to the value of 0x401d60?
   401180:	85 c0                	test   %eax,%eax
