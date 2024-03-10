@@ -12,7 +12,7 @@
   401176:	be 60 1d 40 00       	mov    $0x401d60,%esi                 \* %esi holds second argument, presumably the string they'll compare our string against 
                                                                        * i think 0x401d60 represents the address in memory being used
                                                                        *\ 
-\* IN GBU: When the program breaks for strings_not_equal, print out dereferenced %esi and %rsp *\
+\* IN GBU: When the program breaks for <strings_not_equal>, print out dereferenced %esi and %rsp *\
   40117b:	e8 9f 03 00 00       	callq  40151f <strings_not_equal>     \* I think it's using $esi and %rsp *\
   401180:	85 c0                	test   %eax,%eax
   401182:	75 05                	jne    401189 <phase_1+0x17>          \* if the jne coondition is met, jumps to "callq <explode_bomb>" 
@@ -60,3 +60,16 @@
   401577:	5d                   	pop    %rbp
   401578:	41 5c                	pop    %r12
   40157a:	c3                   	retq 
+
+0000000000401990 <explode_bomb>:
+  401990:	48 83 ec 08          	sub    $0x8,%rsp
+  401994:	bf e8 20 40 00       	mov    $0x4020e8,%edi
+  401999:	e8 e2 f3 ff ff       	callq  400d80 <puts@plt>
+  40199e:	bf f1 20 40 00       	mov    $0x4020f1,%edi
+  4019a3:	e8 d8 f3 ff ff       	callq  400d80 <puts@plt>
+  4019a8:	bf 00 00 00 00       	mov    $0x0,%edi
+  4019ad:	e8 9e fd ff ff       	callq  401750 <send_msg>
+  4019b2:	bf 48 1e 40 00       	mov    $0x401e48,%edi
+  4019b7:	e8 c4 f3 ff ff       	callq  400d80 <puts@plt>
+  4019bc:	bf 08 00 00 00       	mov    $0x8,%edi
+  4019c1:	e8 2a f5 ff ff       	callq  400ef0 <exit@plt>
