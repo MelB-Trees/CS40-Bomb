@@ -7,9 +7,13 @@
 
 
 0000000000401172 <phase_1>:
-  401172:	48 83 ec 08          	sub    $0x8,%rsp                      \* what does %rsp hold? %rsp = stack pointer
-  401176:	be 60 1d 40 00       	mov    $0x401d60,%esi                 \* %esi holds second argument, presumably the string they'll compare our string against
-  40117b:	e8 9f 03 00 00       	callq  40151f <strings_not_equal>     \* I think it's using $esi, which is set to the value of 0x401d60?
+  401172:	48 83 ec 08          	sub    $0x8,%rsp                      \* what does %rsp hold? %rsp = stack pointer, maybe this is the input? *\
+                                                                      \* subtracting 8 moves the address back 8 bytes, size of pointer but idk why? *\
+  401176:	be 60 1d 40 00       	mov    $0x401d60,%esi                 \* %esi holds second argument, presumably the string they'll compare our string against 
+                                                                       * i think 0x401d60 represents the address in memory being used
+                                                                       *\ 
+\* IN GBU: When the program breaks for strings_not_equal, print out dereferenced %esi and %rsp *\
+  40117b:	e8 9f 03 00 00       	callq  40151f <strings_not_equal>     \* I think it's using $esi and %rsp *\
   401180:	85 c0                	test   %eax,%eax
   401182:	75 05                	jne    401189 <phase_1+0x17>          \* if the jne coondition is met, jumps to "callq <explode_bomb>" 
                                                                        * where is this condition obtained? I'm guessing <strings_not_equal> 
@@ -18,7 +22,7 @@
                                                                        *     this means we want <strings_not_equal> to return 0
                                                                        * so is 1 true and 0 false?
                                                                        *\
-  401184:	48 83 c4 08          	add    $0x8,%rsp
+  401184:	48 83 c4 08          	add    $0x8,%rsp                      \* resets address from 401172 *\
   401188:	c3                   	retq                                  \* return, exits function *\
   401189:	e8 02 08 00 00       	callq  401990 <explode_bomb>
   40118e:	eb f4                	jmp    401184 <phase_1+0x12>
