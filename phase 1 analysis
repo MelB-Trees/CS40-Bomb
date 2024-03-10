@@ -66,6 +66,18 @@
   401578:	41 5c                	pop    %r12
   40157a:	c3                   	retq 
 
+0000000000401502 <string_length>:
+  401502:	80 3f 00             	cmpb   $0x0,(%rdi)
+  401505:	74 12                	je     401519 <string_length+0x17>
+  401507:	b8 00 00 00 00       	mov    $0x0,%eax
+  40150c:	48 83 c7 01          	add    $0x1,%rdi
+  401510:	83 c0 01             	add    $0x1,%eax
+  401513:	80 3f 00             	cmpb   $0x0,(%rdi)
+  401516:	75 f4                	jne    40150c <string_length+0xa>
+  401518:	c3                   	retq   
+  401519:	b8 00 00 00 00       	mov    $0x0,%eax
+  40151e:	c3                   	retq  
+
 0000000000401990 <explode_bomb>:
   401990:	48 83 ec 08          	sub    $0x8,%rsp
   401994:	bf e8 20 40 00       	mov    $0x4020e8,%edi
