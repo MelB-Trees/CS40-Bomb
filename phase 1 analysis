@@ -7,7 +7,7 @@
 
 
 0000000000401172 <phase_1>:
-  401172:	48 83 ec 08          	sub    $0x8,%rsp                      \* what does %rsp hold?
+  401172:	48 83 ec 08          	sub    $0x8,%rsp                      \* what does %rsp hold? %rsp = stack pointer
   401176:	be 60 1d 40 00       	mov    $0x401d60,%esi                 \* %esi holds second argument, presumably the string they'll compare our string against
   40117b:	e8 9f 03 00 00       	callq  40151f <strings_not_equal>     \* I think it's using $esi, which is set to the value of 0x401d60?
   401180:	85 c0                	test   %eax,%eax
