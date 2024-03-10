@@ -24,6 +24,8 @@
                                                                        *\
   401184:	48 83 c4 08          	add    $0x8,%rsp                      \* resets address from 401172 *\
   401188:	c3                   	retq                                  \* return, exits function *\
+
+\* always kill function if this point is reached! */
   401189:	e8 02 08 00 00       	callq  401990 <explode_bomb>
   40118e:	eb f4                	jmp    401184 <phase_1+0x12>
 
