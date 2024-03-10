@@ -17,7 +17,7 @@
  * After trying "x/1s" on the address at $0x401d60, got "Consider what you are about to do"
  *\
   40117b:	e8 9f 03 00 00       	callq  40151f <strings_not_equal>     \* I think it's using $esi and %rsp *\
-  401180:	85 c0                	test   %eax,%eax
+  401180:	85 c0                	test   %eax,%eax                      \* if strings not equal, $eax is set to 1*\
   401182:	75 05                	jne    401189 <phase_1+0x17>          \* if the jne coondition is met, jumps to "callq <explode_bomb>" 
                                                                        * where is this condition obtained? I'm guessing <strings_not_equal> 
                                                                        * modifies the value of %eax, looking to see if it equals 0?
