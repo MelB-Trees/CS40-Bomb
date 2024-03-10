@@ -43,9 +43,10 @@
   401531:	48 89 ef             	mov    %rbp,%rdi
   401534:	e8 c9 ff ff ff       	callq  401502 <string_length>
   401539:	89 c2                	mov    %eax,%edx
-  40153b:	b8 01 00 00 00       	mov    $0x1,%eax
+  40153b:	b8 01 00 00 00       	mov    $0x1,%eax \*set %eax as 1 in case string lengths will be different *\
   401540:	41 39 d4             	cmp    %edx,%r12d
-  401543:	75 31                	jne    401576 <strings_not_equal+0x57>
+  401543:	75 31                	jne    401576 <strings_not_equal+0x57> \* returns %eax as 1 if lengths don't match *\ 
+
   401545:	0f b6 13             	movzbl (%rbx),%edx
   401548:	84 d2                	test   %dl,%dl
   40154a:	74 1e                	je     40156a <strings_not_equal+0x4b>
