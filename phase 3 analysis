@@ -1,4 +1,4 @@
-00000000004011c9 <phase_3>:
+on00000000004011c9 <phase_3>:
   4011c9:	48 83 ec 18          	sub    $0x18,%rsp
 /* moves pointer back 24 bytes */
   4011cd:	48 8d 4c 24 08       	lea    0x8(%rsp),%rcx
@@ -26,7 +26,7 @@
 /* sets value of eax to  %rsp + 12 bytes */
 
   4011fa:	ff 24 c5 c0 1d 40 00 	jmpq   *0x401dc0(,%rax,8)
-/* what's this address */
+/* stores address to one of the operations down there */
 
   401201:	e8 8a 07 00 00       	callq  401990 <explode_bomb>
 
