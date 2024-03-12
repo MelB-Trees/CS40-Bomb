@@ -12,6 +12,7 @@
   4011dc:	b8 00 00 00 00       	mov    $0x0,%eax
   4011e1:	e8 9a fc ff ff       	callq  400e80 <__isoc99_sscanf@plt>
   4011e6:	83 f8 01             	cmp    $0x1,%eax
+/* checking for 2 inputs ? */
 
   4011e9:	7e 16                	jle    401201 <phase_3+0x38> /* explodes bomb if comparison goes wrong */
 
