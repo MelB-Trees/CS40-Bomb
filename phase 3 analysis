@@ -1,0 +1,47 @@
+00000000004011c9 <phase_3>:
+  4011c9:	48 83 ec 18          	sub    $0x18,%rsp
+  4011cd:	48 8d 4c 24 08       	lea    0x8(%rsp),%rcx
+  4011d2:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
+  4011d7:	be 14 21 40 00       	mov    $0x402114,%esi
+  4011dc:	b8 00 00 00 00       	mov    $0x0,%eax
+  4011e1:	e8 9a fc ff ff       	callq  400e80 <__isoc99_sscanf@plt>
+  4011e6:	83 f8 01             	cmp    $0x1,%eax
+  4011e9:	7e 16                	jle    401201 <phase_3+0x38>
+  4011eb:	83 7c 24 0c 07       	cmpl   $0x7,0xc(%rsp)
+  4011f0:	0f 87 80 00 00 00    	ja     401276 <phase_3+0xad>
+  4011f6:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+  4011fa:	ff 24 c5 c0 1d 40 00 	jmpq   *0x401dc0(,%rax,8)
+  401201:	e8 8a 07 00 00       	callq  401990 <explode_bomb>
+  401206:	eb e3                	jmp    4011eb <phase_3+0x22>
+  401208:	b8 52 02 00 00       	mov    $0x252,%eax
+  40120d:	83 e8 36             	sub    $0x36,%eax
+  401210:	05 98 00 00 00       	add    $0x98,%eax
+  401215:	2d 36 03 00 00       	sub    $0x336,%eax
+  40121a:	05 d4 02 00 00       	add    $0x2d4,%eax
+  40121f:	2d d4 03 00 00       	sub    $0x3d4,%eax
+  401224:	05 d4 03 00 00       	add    $0x3d4,%eax
+  401229:	2d cc 03 00 00       	sub    $0x3cc,%eax
+  40122e:	83 7c 24 0c 05       	cmpl   $0x5,0xc(%rsp)
+  401233:	7f 06                	jg     40123b <phase_3+0x72>
+  401235:	39 44 24 08          	cmp    %eax,0x8(%rsp)
+  401239:	74 05                	je     401240 <phase_3+0x77>
+  40123b:	e8 50 07 00 00       	callq  401990 <explode_bomb>
+  401240:	48 83 c4 18          	add    $0x18,%rsp
+  401244:	c3                   	retq   
+  401245:	b8 00 00 00 00       	mov    $0x0,%eax
+  40124a:	eb c1                	jmp    40120d <phase_3+0x44>
+  40124c:	b8 00 00 00 00       	mov    $0x0,%eax
+  401251:	eb bd                	jmp    401210 <phase_3+0x47>
+  401253:	b8 00 00 00 00       	mov    $0x0,%eax
+  401258:	eb bb                	jmp    401215 <phase_3+0x4c>
+  40125a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40125f:	eb b9                	jmp    40121a <phase_3+0x51>
+  401261:	b8 00 00 00 00       	mov    $0x0,%eax
+  401266:	eb b7                	jmp    40121f <phase_3+0x56>
+  401268:	b8 00 00 00 00       	mov    $0x0,%eax
+  40126d:	eb b5                	jmp    401224 <phase_3+0x5b>
+  40126f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401274:	eb b3                	jmp    401229 <phase_3+0x60>
+  401276:	e8 15 07 00 00       	callq  401990 <explode_bomb>
+  40127b:	b8 00 00 00 00       	mov    $0x0,%eax
+  401280:	eb ac                	jmp    40122e <phase_3+0x65>
