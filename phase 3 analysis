@@ -2,7 +2,9 @@
   4011c9:	48 83 ec 18          	sub    $0x18,%rsp
 /* moves pointer back 24 bytes */
   4011cd:	48 8d 4c 24 08       	lea    0x8(%rsp),%rcx
+/* assigns value at rsp + 8 bytes to rcx */
   4011d2:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
+/* assigns value at rsp + 12 bytes to rcx */
 
   4011d7:	be 14 21 40 00       	mov    $0x402114,%esi 
 /* check what's being stored here */
@@ -23,6 +25,7 @@
   401201:	e8 8a 07 00 00       	callq  401990 <explode_bomb>
 
   401206:	eb e3                	jmp    4011eb <phase_3+0x22>
+
   401208:	b8 52 02 00 00       	mov    $0x252,%eax
   40120d:	83 e8 36             	sub    $0x36,%eax
   401210:	05 98 00 00 00       	add    $0x98,%eax
@@ -31,6 +34,7 @@
   40121f:	2d d4 03 00 00       	sub    $0x3d4,%eax
   401224:	05 d4 03 00 00       	add    $0x3d4,%eax
   401229:	2d cc 03 00 00       	sub    $0x3cc,%eax
+
   40122e:	83 7c 24 0c 05       	cmpl   $0x5,0xc(%rsp)
   401233:	7f 06                	jg     40123b <phase_3+0x72> /* explodes bomb */
   401235:	39 44 24 08          	cmp    %eax,0x8(%rsp)
