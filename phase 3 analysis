@@ -23,7 +23,10 @@
 /*  %rsp + 12 bytes must be unsigned value less than or equal to 7 */
 
   4011f6:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+/* sets value of eax to  %rsp + 12 bytes */
+
   4011fa:	ff 24 c5 c0 1d 40 00 	jmpq   *0x401dc0(,%rax,8)
+/* what's this address */
 
   401201:	e8 8a 07 00 00       	callq  401990 <explode_bomb>
 
