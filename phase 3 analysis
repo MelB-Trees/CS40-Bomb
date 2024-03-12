@@ -27,6 +27,7 @@ on00000000004011c9 <phase_3>:
 
   4011fa:	ff 24 c5 c0 1d 40 00 	jmpq   *0x401dc0(,%rax,8)
 /* stores address to one of the operations down there */
+/* based on x/16gx 0x401dc0, leads to either 401208 or 401245 */
 
   401201:	e8 8a 07 00 00       	callq  401990 <explode_bomb>
 
