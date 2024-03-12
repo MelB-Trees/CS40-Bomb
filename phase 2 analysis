@@ -3,6 +3,8 @@
  *    This phase is checking that you give the input 6 numbers that
  *    are incrementing by 5 each
  *    example: 1 6 11 16 21 26
+ *    
+ *    but def check if %esi holds anything important
  * 
  */
 
