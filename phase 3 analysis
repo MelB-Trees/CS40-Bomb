@@ -20,6 +20,7 @@
 /* compares 7 with value at %rsp + 12 bytes */
 
   4011f0:	0f 87 80 00 00 00    	ja     401276 <phase_3+0xad> /* also explodes bomb */
+/*  %rsp + 12 bytes must be unsigned value less than or equal to 7 */
 
   4011f6:	8b 44 24 0c          	mov    0xc(%rsp),%eax
   4011fa:	ff 24 c5 c0 1d 40 00 	jmpq   *0x401dc0(,%rax,8)
