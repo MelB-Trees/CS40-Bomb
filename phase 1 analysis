@@ -51,7 +51,9 @@
   401548:	84 d2                	test   %dl,%dl
   40154a:	74 1e                	je     40156a <strings_not_equal+0x4b>
   40154c:	b8 00 00 00 00       	mov    $0x0,%eax
-  401551:	38 54 05 00          	cmp    %dl,0x0(%rbp,%rax,1)
+
+  401551:	38 54 05 00          	cmp    %dl,0x0(%rbp,%rax,1) /* %rbp is base of string, $rax stores index, 1 is size of element (char = 1 byte) */
+
   401555:	75 1a                	jne    401571 <strings_not_equal+0x52>
   401557:	48 83 c0 01          	add    $0x1,%rax
   40155b:	0f b6 14 03          	movzbl (%rbx,%rax,1),%edx
