@@ -53,7 +53,9 @@
 
 00000000004019c6 <read_six_numbers>:
   4019c6:	48 83 ec 08          	sub    $0x8,%rsp
+
   4019ca:	48 89 f2             	mov    %rsi,%rdx
+/* $rdx stores pointer to first int? */
 
   4019cd:	48 8d 4e 04          	lea    0x4(%rsi),%rcx 
 /* assigns rcx to next int? */
@@ -69,13 +71,21 @@
   4019da:	50                   	push   %rax /* same stack push thing */
 
   4019db:	4c 8d 4e 0c          	lea    0xc(%rsi),%r9
+/* fourth int (c = 12 bytes = 3 ints) */
+
   4019df:	4c 8d 46 08          	lea    0x8(%rsi),%r8
+/* third int (8 bytes = 4 ints) */
+
   4019e3:	be 08 21 40 00       	mov    $0x402108,%esi
+/* $esi holds whatever is in this address, presumably the values out input is being compared against */
+
   4019e8:	b8 00 00 00 00       	mov    $0x0,%eax
 
-  4019ed:	e8 9e f4 ff ff       	callq  400e90 <sscanf@plt> /* does this change %eax? */
+  4019ed:	e8 9e f4 ff ff       	callq  400e90 <sscanf@plt> /* I think this changes %eax? */
   4019f2:	48 83 c4 10          	add    $0x10,%rsp /* advances address by 16 bytes */
-/* something must've happened here for %eax to be changed to be 6+? */
+/* something must've happened here for %eax to be changed to be 6+? 
+ * so this part is probably checking that at least 6 ints were given
+ */
 
   4019f6:	83 f8 05             	cmp    $0x5,%eax
   4019f9:	7e 05                	jle    401a00 <read_six_numbers+0x3a> /* jumps to explode_bomb if %eax is less than or equal to 5? */
