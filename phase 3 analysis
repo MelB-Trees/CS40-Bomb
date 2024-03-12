@@ -32,14 +32,14 @@
 
   401206:	eb e3                	jmp    4011eb <phase_3+0x22>
 
-  401208:	b8 52 02 00 00       	mov    $0x252,%eax
-  40120d:	83 e8 36             	sub    $0x36,%eax
-  401210:	05 98 00 00 00       	add    $0x98,%eax
-  401215:	2d 36 03 00 00       	sub    $0x336,%eax
-  40121a:	05 d4 02 00 00       	add    $0x2d4,%eax
-  40121f:	2d d4 03 00 00       	sub    $0x3d4,%eax
-  401224:	05 d4 03 00 00       	add    $0x3d4,%eax
-  401229:	2d cc 03 00 00       	sub    $0x3cc,%eax
+  401208:	b8 52 02 00 00       	mov    $0x252,%eax        /* mov 252 = 594   */
+  40120d:	83 e8 36             	sub    $0x36,%eax         /* sub 36 = -54    */
+  401210:	05 98 00 00 00       	add    $0x98,%eax         /* add 98 = +152   */
+  401215:	2d 36 03 00 00       	sub    $0x336,%eax        /* sub 336 = -822 */
+  40121a:	05 d4 02 00 00       	add    $0x2d4,%eax        /* add 2d4 = +724   */
+  40121f:	2d d4 03 00 00       	sub    $0x3d4,%eax        /* sub 3d4 = -980  */
+  401224:	05 d4 03 00 00       	add    $0x3d4,%eax        /* add 3d4 = +980  */
+  401229:	2d cc 03 00 00       	sub    $0x3cc,%eax        /* sub 3cc = +972  */
 
   40122e:	83 7c 24 0c 05       	cmpl   $0x5,0xc(%rsp)
   401233:	7f 06                	jg     40123b <phase_3+0x72> /* explodes bomb */
