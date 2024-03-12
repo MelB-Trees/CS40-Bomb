@@ -49,7 +49,7 @@ on00000000004011c9 <phase_3>:
   401235:	39 44 24 08          	cmp    %eax,0x8(%rsp)
 /* need to calculate value for input at 0x8(%rsp) equal to the value calculated for %eax
 
-  401239:	74 05                	je     401240 <phase_3+0x77> /* continues into loop */
+  401239:	74 05                	je     401240 <phase_3+0x77> /* continues to return defused bomb */
 
   40123b:	e8 50 07 00 00       	callq  401990 <explode_bomb>
 
