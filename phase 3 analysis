@@ -10,7 +10,7 @@ on00000000004011c9 <phase_3>:
 /* check what's being stored here */
 
   4011dc:	b8 00 00 00 00       	mov    $0x0,%eax
-  4011e1:	e8 9a fc ff ff       	callq  400e80 <__isoc99_sscanf@plt>
+  4011e1:	e8 9a fc ff ff       	callq  400e80 <__isoc99_sscanf@plt> /* giving 3 inputs called explode_bomb? */
   4011e6:	83 f8 01             	cmp    $0x1,%eax
 /* checking for 2 inputs ? */
 
