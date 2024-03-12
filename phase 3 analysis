@@ -6,7 +6,7 @@ on00000000004011c9 <phase_3>:
   4011d2:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
 /* assigns value at rsp + 12 bytes to rdx */
 
-  4011d7:	be 14 21 40 00       	mov    $0x402114,%esi  /*this address gives 37 when callign x/1d */
+  4011d7:	be 14 21 40 00       	mov    $0x402114,%esi  /*this address gives "37 100 32 37 100 0 69 114" when calling x/8d */
 /* check what's being stored here */
 
   4011dc:	b8 00 00 00 00       	mov    $0x0,%eax
