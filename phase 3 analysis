@@ -4,7 +4,7 @@
   4011cd:	48 8d 4c 24 08       	lea    0x8(%rsp),%rcx
 /* assigns value at rsp + 8 bytes to rcx */
   4011d2:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
-/* assigns value at rsp + 12 bytes to rcx */
+/* assigns value at rsp + 12 bytes to rdx */
 
   4011d7:	be 14 21 40 00       	mov    $0x402114,%esi 
 /* check what's being stored here */
