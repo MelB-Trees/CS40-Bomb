@@ -45,6 +45,8 @@ on00000000004011c9 <phase_3>:
   40122e:	83 7c 24 0c 05       	cmpl   $0x5,0xc(%rsp)
   401233:	7f 06                	jg     40123b <phase_3+0x72> /* explodes bomb */
   401235:	39 44 24 08          	cmp    %eax,0x8(%rsp)
+/* need to calculate value for input at 0x8(%rsp) equal to the value calculated for %eax
+
   401239:	74 05                	je     401240 <phase_3+0x77> /* continues into loop */
 
   40123b:	e8 50 07 00 00       	callq  401990 <explode_bomb>
