@@ -17,6 +17,7 @@ on00000000004011c9 <phase_3>:
   4011e9:	7e 16                	jle    401201 <phase_3+0x38> /* explodes bomb if comparison goes wrong */
 
   4011eb:	83 7c 24 0c 07       	cmpl   $0x7,0xc(%rsp)
+/* when used "1566 5" as input, 0xc(%rsp) = 30? */
 /* compares 7 with value at %rsp + 12 bytes */
 
   4011f0:	0f 87 80 00 00 00    	ja     401276 <phase_3+0xad> /* also explodes bomb */
