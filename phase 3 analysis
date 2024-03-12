@@ -1,5 +1,6 @@
 00000000004011c9 <phase_3>:
   4011c9:	48 83 ec 18          	sub    $0x18,%rsp
+/* moves pointer back 24 bytes */
   4011cd:	48 8d 4c 24 08       	lea    0x8(%rsp),%rcx
   4011d2:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
 
