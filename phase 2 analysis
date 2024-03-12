@@ -1,3 +1,12 @@
+/*
+ * HYPOTHESIS: 
+ *    This phase is checking that you give the input 6 numbers that
+ *    are incrementing by 5 each
+ *    example: 1 6 11 16 21 26
+ * 
+ */
+
+
   40109f:	e8 61 09 00 00       	callq  401a05 <read_line>
   4010a4:	48 89 c7             	mov    %rax,%rdi
   4010a7:	e8 e4 00 00 00       	callq  401190 <phase_2>
@@ -37,11 +46,14 @@
 /* loop begins here, sets the $eax register to next value in array? */
 
   4011b3:	83 c0 05             	add    $0x5,%eax /* adds 5 to value stored in $eax */
-  4011b6:	39 43 04             	cmp    %eax,0x4(%rbx) /* i think this compares if the 
+  4011b6:	39 43 04             	cmp    %eax,0x4(%rbx) 
+/* i think this compares if the next integer is 5 greater than the previous 
+ * i also don't see any references to another set of numbers, so maybe the exact numbers doesn't matter?? 
+ */
 
-  4011b9:	74 ed                	je     4011a8 <phase_2+0x18> /* loop jumps back here */ 
+  4011b9:	74 ed                	je     4011a8 <phase_2+0x18> /* loop jumps back here if equal */ 
 
-  4011bb:	e8 d0 07 00 00       	callq  401990 <explode_bomb> /* bad :( */
+  4011bb:	e8 d0 07 00 00       	callq  401990 <explode_bomb> /* not equal, bad :( */
   4011c0:	eb e6                	jmp    4011a8 <phase_2+0x18>
 
   4011c2:	48 83 c4 28          	add    $0x28,%rsp
@@ -77,7 +89,8 @@
 /* third int (8 bytes = 4 ints) */
 
   4019e3:	be 08 21 40 00       	mov    $0x402108,%esi
-/* $esi holds whatever is in this address, presumably the values out input is being compared against */
+/* $esi holds whatever is in this address, presumably the values out input is being compared against? */
+/* actually no idea, bc I don't see %esi reappear again */
 
   4019e8:	b8 00 00 00 00       	mov    $0x0,%eax
 
