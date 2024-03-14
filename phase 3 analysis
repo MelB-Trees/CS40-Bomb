@@ -57,19 +57,19 @@ on00000000004011c9 <phase_3>:
 
   401240:	48 83 c4 18          	add    $0x18,%rsp
   401244:	c3                   	retq   
-  401245:	b8 00 00 00 00       	mov    $0x0,%eax
+  401245:	b8 00 00 00 00       	mov    $0x0,%eax                  /* 1 * /
   40124a:	eb c1                	jmp    40120d <phase_3+0x44>
-  40124c:	b8 00 00 00 00       	mov    $0x0,%eax
+  40124c:	b8 00 00 00 00       	mov    $0x0,%eax                  /* 2 * /
   401251:	eb bd                	jmp    401210 <phase_3+0x47>
-  401253:	b8 00 00 00 00       	mov    $0x0,%eax
+  401253:	b8 00 00 00 00       	mov    $0x0,%eax                  /* 3 */
   401258:	eb bb                	jmp    401215 <phase_3+0x4c>
-  40125a:	b8 00 00 00 00       	mov    $0x0,%eax
+  40125a:	b8 00 00 00 00       	mov    $0x0,%eax                  /* 4 */
   40125f:	eb b9                	jmp    40121a <phase_3+0x51>
-  401261:	b8 00 00 00 00       	mov    $0x0,%eax
+  401261:	b8 00 00 00 00       	mov    $0x0,%eax                  /* 5 */
   401266:	eb b7                	jmp    40121f <phase_3+0x56>
-  401268:	b8 00 00 00 00       	mov    $0x0,%eax
+  401268:	b8 00 00 00 00       	mov    $0x0,%eax                  /* 6 */
   40126d:	eb b5                	jmp    401224 <phase_3+0x5b>
-  40126f:	b8 00 00 00 00       	mov    $0x0,%eax
+  40126f:	b8 00 00 00 00       	mov    $0x0,%eax                 /* jumps here after the   4011fa: 7 */
   401274:	eb b3                	jmp    401229 <phase_3+0x60>
 
   401276:	e8 15 07 00 00       	callq  401990 <explode_bomb>
