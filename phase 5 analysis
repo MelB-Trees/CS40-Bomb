@@ -8,20 +8,24 @@
   /* string length must be 6? */
   
   4012fd:	75 3f                	jne    40133e <phase_5+0x51> /* explodes bomb */
+  4012ff:	b8 00 00 00 00       	mov    $0x0,%eax /* reset $eax for string comparison later */ 
 
-  4012ff:	b8 00 00 00 00       	mov    $0x0,%eax
   401304:	0f b6 14 03          	movzbl (%rbx,%rax,1),%edx
   401308:	83 e2 0f             	and    $0xf,%edx
-  40130b:	0f b6 92 00 1e 40 00 	movzbl 0x401e00(%rdx),%edx
-  401312:	88 54 04 09          	mov    %dl,0x9(%rsp,%rax,1)
+  40130b:	0f b6 92 00 1e 40 00 	movzbl 0x401e00(%rdx),%edx  /* each char seems associated with a specific other char */ 
+
+  401312:	88 54 04 09          	mov    %dl,0x9(%rsp,%rax,1) /* adds a char incrementally to the string */
+
   401316:	48 83 c0 01          	add    $0x1,%rax
   40131a:	48 83 f8 06          	cmp    $0x6,%rax
-  40131e:	75 e4                	jne    401304 <phase_5+0x17>
+  40131e:	75 e4                	jne    401304 <phase_5+0x17> /* loops 6 times, per char in string I'm guessing */
+
   401320:	c6 44 24 0f 00       	movb   $0x0,0xf(%rsp)
   
   401325:	be ae 1d 40 00       	mov    $0x401dae,%esi
   
   40132a:	48 8d 7c 24 09       	lea    0x9(%rsp),%rdi
+
   40132f:	e8 eb 01 00 00       	callq  40151f <strings_not_equal>
   / *comparing string against whatever is in 0x401dae most likely */ 
   
