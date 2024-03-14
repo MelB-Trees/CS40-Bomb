@@ -7,7 +7,8 @@
   4012fa:	83 f8 06             	cmp    $0x6,%eax 
   /* string length must be 6? */
   
-  4012fd:	75 3f                	jne    40133e <phase_5+0x51>
+  4012fd:	75 3f                	jne    40133e <phase_5+0x51> /* explodes bomb */
+
   4012ff:	b8 00 00 00 00       	mov    $0x0,%eax
   401304:	0f b6 14 03          	movzbl (%rbx,%rax,1),%edx
   401308:	83 e2 0f             	and    $0xf,%edx
