@@ -1,14 +1,14 @@
 0000000000401282 <func4>:
   401282:	b8 01 00 00 00       	mov    $0x1,%eax
   401287:	85 ff                	test   %edi,%edi  
-  401289:	7e 1c                	jle    4012a7 <func4+0x25>
-  40128b:	48 83 ec 08          	sub    $0x8,%rsp
+  401289:	7e 1c                	jle    4012a7 <func4+0x25>    /* starts as -38 */ 
+  40128b:	48 83 ec 08          	sub    $0x8,%rsp             /*  rsp is now -128 */ 
   40128f:	83 ef 01             	sub    $0x1,%edi
   401292:	e8 eb ff ff ff       	callq  401282 <func4>
   401297:	89 c2                	mov    %eax,%edx
   401299:	8d 04 c5 00 00 00 00 	lea    0x0(,%rax,8),%eax
   4012a0:	29 d0                	sub    %edx,%eax
-  4012a2:	48 83 c4 08          	add    $0x8,%rsp
+  4012a2:	48 83 c4 08          	add    $0x8,%rsp  
   4012a6:	c3                   	retq   
   4012a7:	c3                   	retq   
 
@@ -22,7 +22,7 @@
 /* only want 1 input */
 
   4012c3:	75 07                	jne    4012cc <phase_4+0x24>
-  4012c5:	83 7c 24 0c 00       	cmpl   $0x0,0xc(%rsp)
+  4012c5:	83 7c 24 0c 00       	cmpl   $0x0,0xc(%rsp)    
 /* our input should be greater than 0 */
 
   4012ca:	7f 05                	jg     4012d1 <phase_4+0x29> /* jumps to func_4 call */
