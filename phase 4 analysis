@@ -2,7 +2,7 @@
   401282:	b8 01 00 00 00       	mov    $0x1,%eax
   401287:	85 ff                	test   %edi,%edi              /* our input 10 */      
   401289:	7e 1c                	jle    4012a7 <func4+0x25>    /*rsp  -38 */ 
-  40128b:	48 83 ec 08          	sub    $0x8,%rsp             /*rsp 0,  -128 */ 
+  40128b:	48 83 ec 08          	sub    $0x8,%rsp             /*rsp 0,  -128, 0, 0, 48, 0, 10, 58, 0, 19 */ 
   40128f:	83 ef 01             	sub    $0x1,%edi
   401292:	e8 eb ff ff ff       	callq  401282 <func4>
   401297:	89 c2                	mov    %eax,%edx
