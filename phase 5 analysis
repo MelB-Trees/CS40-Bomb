@@ -1,0 +1,35 @@
+00000000004012ed <phase_5>:
+  4012ed:	53                   	push   %rbx
+  4012ee:	48 83 ec 10          	sub    $0x10,%rsp
+  4012f2:	48 89 fb             	mov    %rdi,%rbx
+  4012f5:	e8 08 02 00 00       	callq  401502 <string_length>
+  
+  4012fa:	83 f8 06             	cmp    $0x6,%eax 
+  /* string length must be 6? */
+  
+  4012fd:	75 3f                	jne    40133e <phase_5+0x51>
+  4012ff:	b8 00 00 00 00       	mov    $0x0,%eax
+  401304:	0f b6 14 03          	movzbl (%rbx,%rax,1),%edx
+  401308:	83 e2 0f             	and    $0xf,%edx
+  40130b:	0f b6 92 00 1e 40 00 	movzbl 0x401e00(%rdx),%edx
+  401312:	88 54 04 09          	mov    %dl,0x9(%rsp,%rax,1)
+  401316:	48 83 c0 01          	add    $0x1,%rax
+  40131a:	48 83 f8 06          	cmp    $0x6,%rax
+  40131e:	75 e4                	jne    401304 <phase_5+0x17>
+  401320:	c6 44 24 0f 00       	movb   $0x0,0xf(%rsp)
+  
+  401325:	be ae 1d 40 00       	mov    $0x401dae,%esi
+  
+  40132a:	48 8d 7c 24 09       	lea    0x9(%rsp),%rdi
+  40132f:	e8 eb 01 00 00       	callq  40151f <strings_not_equal>
+  / *comparing string against whatever is in 0x401dae most likely */ 
+  
+  401334:	85 c0                	test   %eax,%eax
+  401336:	75 0d                	jne    401345 <phase_5+0x58>
+  401338:	48 83 c4 10          	add    $0x10,%rsp
+  40133c:	5b                   	pop    %rbx
+  40133d:	c3                   	retq   
+  40133e:	e8 4d 06 00 00       	callq  401990 <explode_bomb>
+  401343:	eb ba                	jmp    4012ff <phase_5+0x12>
+  401345:	e8 46 06 00 00       	callq  401990 <explode_bomb>
+  40134a:	eb ec                	jmp    401338 <phase_5+0x4b>
