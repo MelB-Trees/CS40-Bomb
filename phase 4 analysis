@@ -1,0 +1,33 @@
+0000000000401282 <func4>:
+  401282:	b8 01 00 00 00       	mov    $0x1,%eax
+  401287:	85 ff                	test   %edi,%edi
+  401289:	7e 1c                	jle    4012a7 <func4+0x25>
+  40128b:	48 83 ec 08          	sub    $0x8,%rsp
+  40128f:	83 ef 01             	sub    $0x1,%edi
+  401292:	e8 eb ff ff ff       	callq  401282 <func4>
+  401297:	89 c2                	mov    %eax,%edx
+  401299:	8d 04 c5 00 00 00 00 	lea    0x0(,%rax,8),%eax
+  4012a0:	29 d0                	sub    %edx,%eax
+  4012a2:	48 83 c4 08          	add    $0x8,%rsp
+  4012a6:	c3                   	retq   
+  4012a7:	c3                   	retq   
+
+00000000004012a8 <phase_4>:
+  4012a8:	48 83 ec 18          	sub    $0x18,%rsp
+  4012ac:	48 8d 54 24 0c       	lea    0xc(%rsp),%rdx
+  4012b1:	be 17 21 40 00       	mov    $0x402117,%esi
+  4012b6:	b8 00 00 00 00       	mov    $0x0,%eax
+  4012bb:	e8 c0 fb ff ff       	callq  400e80 <__isoc99_sscanf@plt>
+  4012c0:	83 f8 01             	cmp    $0x1,%eax
+  4012c3:	75 07                	jne    4012cc <phase_4+0x24>
+  4012c5:	83 7c 24 0c 00       	cmpl   $0x0,0xc(%rsp)
+  4012ca:	7f 05                	jg     4012d1 <phase_4+0x29>
+  4012cc:	e8 bf 06 00 00       	callq  401990 <explode_bomb>
+  4012d1:	8b 7c 24 0c          	mov    0xc(%rsp),%edi
+  4012d5:	e8 a8 ff ff ff       	callq  401282 <func4>
+  4012da:	3d 91 cb 01 00       	cmp    $0x1cb91,%eax
+  4012df:	75 05                	jne    4012e6 <phase_4+0x3e>
+  4012e1:	48 83 c4 18          	add    $0x18,%rsp
+  4012e5:	c3                   	retq   
+  4012e6:	e8 a5 06 00 00       	callq  401990 <explode_bomb>
+  4012eb:	eb f4                	jmp    4012e1 <phase_4+0x39>
