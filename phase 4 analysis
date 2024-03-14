@@ -26,11 +26,14 @@
 /* our input should be greater than 0 */
 
   4012ca:	7f 05                	jg     4012d1 <phase_4+0x29> /* jumps to func_4 call */
+
   4012cc:	e8 bf 06 00 00       	callq  401990 <explode_bomb>
   4012d1:	8b 7c 24 0c          	mov    0xc(%rsp),%edi
   4012d5:	e8 a8 ff ff ff       	callq  401282 <func4>
-  4012da:	3d 91 cb 01 00       	cmp    $0x1cb91,%eax
-  4012df:	75 05                	jne    4012e6 <phase_4+0x3e>
+  4012da:	3d 91 cb 01 00       	cmp    $0x1cb91,%eax 
+/* we want func_4 to return this value in decimal: 117649 */
+
+  4012df:	75 05                	jne    4012e6 <phase_4+0x3e> /* explodes bomb if value if incorrect */
   4012e1:	48 83 c4 18          	add    $0x18,%rsp
   4012e5:	c3                   	retq   
   4012e6:	e8 a5 06 00 00       	callq  401990 <explode_bomb>
