@@ -42,7 +42,7 @@ on00000000004011c9 <phase_3>:
   40121f:	2d d4 03 00 00       	sub    $0x3d4,%eax        /* sub 3d4 = -980  */
   401224:	05 d4 03 00 00       	add    $0x3d4,%eax        /* add 3d4 = +980  */
   401229:	2d cc 03 00 00       	sub    $0x3cc,%eax        /* sub 3cc = -972  */ 
-/* %eax ends as 1566 */
+/* %eax ends as -378 */
 /* if jump to 401245 %eax = 972 instead? */
 
   40122e:	83 7c 24 0c 05       	cmpl   $0x5,0xc(%rsp)
