@@ -1,6 +1,6 @@
 0000000000401282 <func4>:
   401282:	b8 01 00 00 00       	mov    $0x1,%eax
-  401287:	85 ff                	test   %edi,%edi
+  401287:	85 ff                	test   %edi,%edi    /* if edi = 0, will call bomb later */ 
   401289:	7e 1c                	jle    4012a7 <func4+0x25>
   40128b:	48 83 ec 08          	sub    $0x8,%rsp
   40128f:	83 ef 01             	sub    $0x1,%edi
