@@ -38,12 +38,12 @@
 
 00000000004013b3 <phase_6>:
   4013b3:	48 83 ec 08          	sub    $0x8,%rsp
-  4013b7:	ba 0a 00 00 00       	mov    $0xa,%edx
-  4013bc:	be 00 00 00 00       	mov    $0x0,%esi
-  4013c1:	e8 9a fa ff ff       	callq  400e60 <strtol@plt>
-  4013c6:	89 05 54 2f 20 00    	mov    %eax,0x202f54(%rip)        # 604320 <node0>
+  4013b7:	ba 0a 00 00 00       	mov    $0xa,%edx                /* moves 10 into edx */
+  4013bc:	be 00 00 00 00       	mov    $0x0,%esi                /* zeros out the esi */
+  4013c1:	e8 9a fa ff ff       	callq  400e60 <strtol@plt>      /* converts string input to long */
+  4013c6:	89 05 54 2f 20 00    	mov    %eax,0x202f54(%rip)        # 604320 <node0>       /* store the result into node0 (memory) */
   4013cc:	bf 20 43 60 00       	mov    $0x604320,%edi
-  4013d1:	e8 76 ff ff ff       	callq  40134c <fun6>
+  4013d1:	e8 76 ff ff ff       	callq  40134c <fun6>           /* calls the function */
   4013d6:	48 8b 40 08          	mov    0x8(%rax),%rax
   4013da:	48 8b 40 08          	mov    0x8(%rax),%rax
   4013de:	48 8b 40 08          	mov    0x8(%rax),%rax
