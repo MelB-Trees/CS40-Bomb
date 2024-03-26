@@ -42,13 +42,14 @@
   4013bc:	be 00 00 00 00       	mov    $0x0,%esi                /* zeros out the esi */
   4013c1:	e8 9a fa ff ff       	callq  400e60 <strtol@plt>      /* converts string input to long */
   4013c6:	89 05 54 2f 20 00    	mov    %eax,0x202f54(%rip)        # 604320 <node0>       /* store the result into node0 (memory) */
-  4013cc:	bf 20 43 60 00       	mov    $0x604320,%edi
+  4013cc:	bf 20 43 60 00       	mov    $0x604320,%edi          /* check what $edi is set to */
   4013d1:	e8 76 ff ff ff       	callq  40134c <fun6>           /* calls the function */
   4013d6:	48 8b 40 08          	mov    0x8(%rax),%rax
   4013da:	48 8b 40 08          	mov    0x8(%rax),%rax
   4013de:	48 8b 40 08          	mov    0x8(%rax),%rax
   4013e2:	48 8b 40 08          	mov    0x8(%rax),%rax
-  4013e6:	48 8b 40 08          	mov    0x8(%rax),%rax
+  4013e6:	48 8b 40 08          	mov    0x8(%rax),%rax          /* looks like %rax is a node after fun6 call and goes back through
+                                                                  pointers, keep printing out $rax and map out what's happening */
   4013ea:	8b 0d 30 2f 20 00    	mov    0x202f30(%rip),%ecx        # 604320 <node0>
   4013f0:	39 08                	cmp    %ecx,(%rax)
   4013f2:	75 05                	jne    4013f9 <phase_6+0x46>
