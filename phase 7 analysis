@@ -23,3 +23,25 @@
   401488:	eb d7                	jmp    401461 <secret_phase+0x24>
   40148a:	e8 01 05 00 00       	callq  401990 <explode_bomb>
   40148f:	eb e1                	jmp    401472 <secret_phase+0x35>
+
+0000000000401400 <fun7>:
+  401400:	48 85 ff             	test   %rdi,%rdi
+  401403:	74 32                	je     401437 <fun7+0x37>
+  401405:	48 83 ec 08          	sub    $0x8,%rsp
+  401409:	8b 17                	mov    (%rdi),%edx
+  40140b:	39 f2                	cmp    %esi,%edx
+  40140d:	7f 0c                	jg     40141b <fun7+0x1b>
+  40140f:	b8 00 00 00 00       	mov    $0x0,%eax
+  401414:	75 12                	jne    401428 <fun7+0x28>
+  401416:	48 83 c4 08          	add    $0x8,%rsp
+  40141a:	c3                   	retq   
+  40141b:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
+  40141f:	e8 dc ff ff ff       	callq  401400 <fun7>
+  401424:	01 c0                	add    %eax,%eax
+  401426:	eb ee                	jmp    401416 <fun7+0x16>
+  401428:	48 8b 7f 10          	mov    0x10(%rdi),%rdi
+  40142c:	e8 cf ff ff ff       	callq  401400 <fun7>
+  401431:	8d 44 00 01          	lea    0x1(%rax,%rax,1),%eax
+  401435:	eb df                	jmp    401416 <fun7+0x16>
+  401437:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+  40143c:	c3                   	retq   
