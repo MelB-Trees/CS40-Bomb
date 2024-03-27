@@ -3,13 +3,29 @@ Bomb #4
 
 Acknowledges help and collaboration
 
-Says approximately how many hours you have spent on the assignment
-
-Defuse section that gives the input lines needed to defuse your bomb
-- 
+Says approximately how many hours you have spent on the assignment:
 
 
-A Description section that gives your informal explanations of Phases 1 through 4.
+
+----- Defuse Section -----
+
+Phase 1: - Consider what you are about to do
+Phase 2:   1 6 11 16 21 26 
+Phase 3:   5 -972
+Phase 4:   6 Duke_Leto
+Phase 5:   aepkma
+Phase 6:   563
+Phase 7:.  20
+
+----- Description Section -----
+
+Phase 1:
+
+Phase 2:
+
+Phase 3:
+
+Phase 4:
 
 
 A Code section that gives your notion of the C code that is equivalent to the machine code in Phases 5 and 6.
