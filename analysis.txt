@@ -19,11 +19,14 @@ Phase 7:.  20
 
 ----- Description Section -----
 
-Phase 1:
+Phase 1: Compares the input to a given string. If the strings do not match, it explodes. 
 
 Phase 2: Reads in 6 numbers and checks if these 6 numbers are in increasing order with a difference of 5 between consecutive numbers. 
-         Eitherwise, it explodes.
-Phase 3:
+         Otherwise, it explodes.
+
+Phase 3: This phase has a predetermined sequence of arithemtic calculations, either adding or subtracting, and the number of calculations
+         done is determined by the value of the first input (a number between 0 and 5). The second number of the input must equal the answer of
+         the resulting calculation. 
 
 Phase 4:
 
