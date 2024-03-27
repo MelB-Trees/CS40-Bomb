@@ -1,9 +1,15 @@
-1. An Overview section which
-• Identifies you and your programming partner by name
-• Identifies your bomb by number
-• Acknowledges help and collaboration
-• Says approximately how many hours you have spent on the assignment
-2. A Defuse section that gives the input lines needed to defuse your bomb
-(for as many phases as you have successfully defused).
-3. A Description section that gives your informal explanations of Phases 1 through 4.
-4. A Code section that gives your notion of the C code that is equivalent to the machine code in Phases 5 and 6.
+Jason Wang and Edward Lai
+Bomb #4
+
+Acknowledges help and collaboration
+
+Says approximately how many hours you have spent on the assignment
+
+Defuse section that gives the input lines needed to defuse your bomb
+- 
+
+
+A Description section that gives your informal explanations of Phases 1 through 4.
+
+
+A Code section that gives your notion of the C code that is equivalent to the machine code in Phases 5 and 6.
