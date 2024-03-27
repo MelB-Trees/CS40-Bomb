@@ -77,3 +77,49 @@ void phase5(char *input)
         return;
 }
 
+Phase 6:
+The construction of the linked list is incomplete here, since
+we don't have the specific values of each index
+
+typedef struct list
+{
+        int value;
+        struct list *next;
+}list;
+
+void explode_bomb() 
+{
+        return;
+}
+
+//makes a linked list using a given root
+void fun6(struct list *root)
+{
+        struct list *curr = root;
+        /* add specific value to curr->value */
+        for(int i = 0; i < 9; i++) {
+                struct list *next;
+                curr->next = next;
+                curr = next;
+                /* add specific value to curr->value */
+        }
+        return;
+}
+
+void phase6(int input) 
+{
+        struct list *root;
+        fun6(root);
+        struct list *curr = root;
+
+        //advancing through the list to get the 9th index
+        for(int i = 0; i < 9; i++) {
+                curr = root->next;
+        }
+
+        if(input != curr->value) {
+                explode_bomb();
+        }
+        return;
+}
+
